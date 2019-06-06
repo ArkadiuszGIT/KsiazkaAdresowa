@@ -6,6 +6,14 @@ class Uzytkownik
 {
     int id;
     string login;
-    haslo;
+    string haslo;
+
 public:
+    void ustawId(int noweID);
+    void ustawLogin(string nowyLogin);
+    void ustawHaslo(string noweHaslo);
+
+    int pobierzId();
+    string pobierzLogin();
+    string pobierzHaslo();
 };
