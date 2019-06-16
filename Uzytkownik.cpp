@@ -1,7 +1,3 @@
-#include <iostream>
-#include <vector>
-#include <windows.h>
-
 #include "Uzytkownik.h"
 
 using namespace std;
