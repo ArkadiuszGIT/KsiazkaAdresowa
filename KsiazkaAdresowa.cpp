@@ -37,9 +37,9 @@ int KsiazkaAdresowa::wylogowanieUzytkownika()
     uzytkownikMenedzer.wylogowanieUzytkownika();
 }
 
-void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
 {
-    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
+    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
 }
 
 void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
