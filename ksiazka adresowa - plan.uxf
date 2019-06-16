@@ -106,8 +106,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>35</x>
-      <y>315</y>
+      <x>175</x>
+      <y>364</y>
       <w>189</w>
       <h>161</h>
     </coordinates>
@@ -119,8 +119,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>224</x>
-      <y>315</y>
+      <x>371</x>
+      <y>364</y>
       <w>154</w>
       <h>154</h>
     </coordinates>
@@ -131,9 +131,9 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>378</x>
-      <y>315</y>
-      <w>119</w>
+      <x>35</x>
+      <y>280</y>
+      <w>98</w>
       <h>161</h>
     </coordinates>
     <panel_attributes>Adresat

@@ -14,7 +14,7 @@ int main()
 
     char wybor;
 
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
 
     while (true)
     {
@@ -46,7 +46,8 @@ int main()
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-                //idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
+                //idOstatniegoAdresata = ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+            ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
