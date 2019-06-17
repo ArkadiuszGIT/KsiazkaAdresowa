@@ -25,7 +25,9 @@ public:
     void wypiszWszystkichUzytkownikow();
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
+    void wyswietlWszystkichAdresatow();
 };
 
 #endif
