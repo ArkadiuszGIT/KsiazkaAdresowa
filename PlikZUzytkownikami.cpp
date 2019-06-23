@@ -4,10 +4,10 @@ bool PlikZUzytkownikami::czyPlikJestPusty()
 {
     fstream plikTekstowy;
 
-    plikTekstowy.seekg(0, ios::end);
-    if (plikTekstowy.tellg() == 0)
-        return true;
-    else
+    plikTekstowy.seekg(0, ios::end); // Odczytuje plik od koñca z przesuniêciem 0,
+    if (plikTekstowy.tellg() == 0)   // tellg( ) odczytuje aktualn¹ pozycjê danych z pliku czyli je¿eli pozycja = 0 to
+        return true;                 // plik jest pusty bo odczytujemy od konca.
+    else                             // http://cpp0x.pl/kursy/Kurs-C++/Poziom-4/Poruszanie-sie-po-pliku-w-trybie-do-odczytu/476
         return false;
 }
 
@@ -16,7 +16,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
 
-    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
+    plikTekstowy.open(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str(), ios::app);
 
     if (plikTekstowy.good() == true)
     {
@@ -32,7 +32,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
         }
     }
     else
-        cout << "Nie udalo sie otworzyc pliku " << nazwaPlikuZUzytkownikami << " i zapisac w nim danych." << endl;
+        cout << "Nie udalo sie otworzyc pliku " << NAZWA_PLIKU_Z_UZYTKOWNIKAMI << " i zapisac w nim danych." << endl;
     plikTekstowy.close();
 }
 
@@ -40,9 +40,9 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
 {
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
-    vector <Uzytkownik>::iterator itrKoniec = --uzytkownicy.end();
-
-    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::out);
+    vector <Uzytkownik>::iterator itrKoniec = --uzytkownicy.end();          //Pre(de)inkrementacja powoduje zmianê wartoœci zmiennej o jeden, ale jej zmiana nastêpuje przed wykorzystaniem zmiennej.
+                                                                            //http://cpp0x.pl/kursy/Kurs-C++/FAQ/Czym-sie-rozni-preinkrementacja-od-postinkrementacji/574
+    plikTekstowy.open(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str(), ios::out);       //vector.end wskazuje na element bêd¹cy za ostatnim elementem w wektorze czyli wskazuje na nieistniej¹cy element.
 
     if (plikTekstowy.good() == true)
     {
@@ -63,7 +63,7 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
     }
     else
     {
-        cout << "Nie mozna otworzyc pliku " << nazwaPlikuZUzytkownikami << endl;
+        cout << "Nie mozna otworzyc pliku " << NAZWA_PLIKU_Z_UZYTKOWNIKAMI << endl;
     }
     plikTekstowy.close();
 }
@@ -86,7 +86,7 @@ vector <Uzytkownik> PlikZUzytkownikami::wczytajUzytkownikowZPliku()
     Uzytkownik uzytkownik;
     vector <Uzytkownik> uzytkownicy;
 
-    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::in);
+    plikTekstowy.open(NAZWA_PLIKU_Z_UZYTKOWNIKAMI.c_str(), ios::in);
 
     if (plikTekstowy.good() == true)
     {

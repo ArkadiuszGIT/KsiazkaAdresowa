@@ -18,6 +18,16 @@ class Adresat
     string adres;
 
 public:
+    Adresat(int id = 0, int idUzytkownika = 0, string imie = "", string nazwisko = "", string numerTelefonu = "", string email = "", string adres = "")
+    {
+        this -> id = id; //this to wskaŸnik wskazuj¹cy na sk³adowe danej klasy.
+        this -> idUzytkownika = idUzytkownika;
+        this -> imie = imie;
+        this -> nazwisko = nazwisko;
+        this -> numerTelefonu = numerTelefonu;
+        this -> email = email;
+        this -> adres = adres;
+    }
     void ustawId(int noweId);
     void ustawIdUzytkownika(int noweId);
     void ustawLogin(string nowyLogin);
