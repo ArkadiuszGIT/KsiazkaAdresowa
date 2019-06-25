@@ -71,6 +71,16 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
     adresatMenedzer -> wyswietlWszystkichAdresatow();
 }
 
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+    adresatMenedzer -> wyszukajAdresatowPoImieniu();
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
+{
+    adresatMenedzer -> wyszukajAdresatowPoNazwisku();
+}
+
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
 {
     uzytkownikMenedzer.czyUzytkownikJestZalogowany();

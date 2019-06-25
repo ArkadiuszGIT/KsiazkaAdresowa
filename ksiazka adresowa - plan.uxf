@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>616</x>
-      <y>112</y>
+      <x>609</x>
+      <y>119</y>
       <w>63</w>
       <h>63</h>
     </coordinates>
@@ -19,8 +19,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>616</x>
-      <y>175</y>
+      <x>609</x>
+      <y>182</y>
       <w>231</w>
       <h>203</h>
     </coordinates>
@@ -49,8 +49,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>616</x>
-      <y>378</y>
+      <x>609</x>
+      <y>385</y>
       <w>231</w>
       <h>119</h>
     </coordinates>
@@ -72,8 +72,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>280</y>
+      <x>413</x>
+      <y>308</y>
       <w>175</w>
       <h>112</h>
     </coordinates>
@@ -90,10 +90,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>392</x>
-      <y>56</y>
+      <x>385</x>
+      <y>63</y>
       <w>224</w>
-      <h>196</h>
+      <h>217</h>
     </coordinates>
     <panel_attributes>Ksiazka Adresowa
 --
@@ -112,16 +112,18 @@
 +wybierzOpcjeZMenuUzytkownika():char 
 +dodajAdresata():void
 +wyswietlWszystkichAdresatow():void
++wyszukajAdresatowPoImieniu():void
++wyszukajAdresatowPoNazwisku():void
 +czyUzytkownikJestZalogowany();bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>189</x>
-      <y>238</y>
+      <x>182</x>
+      <y>245</y>
       <w>203</w>
-      <h>119</h>
+      <h>147</h>
     </coordinates>
     <panel_attributes>AdresatMenedzer
 --
@@ -131,16 +133,19 @@
 --
 -wyswietlDaneAdresata():void
 -podajDaneNowegoAdresata():Adresat
+-wyswietlIloscWyszukanychAdresatow():void
 +AdresatMenedzer():
 +dodajAdresata():void
-+wyswietlWszystkichAdresatow():void</panel_attributes>
++wyswietlWszystkichAdresatow():void
++wyszukajAdresatowPoImieniu():void
++wyszukajAdresatowPoNazwisku():void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>189</x>
-      <y>357</y>
+      <x>182</x>
+      <y>392</y>
       <w>203</w>
       <h>154</h>
     </coordinates>
@@ -163,8 +168,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>294</x>
-      <y>112</y>
+      <x>287</x>
+      <y>119</y>
       <w>98</w>
       <h>126</h>
     </coordinates>

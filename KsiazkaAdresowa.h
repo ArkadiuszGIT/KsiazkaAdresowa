@@ -34,6 +34,8 @@ public:
     char wybierzOpcjeZMenuUzytkownika();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
     bool czyUzytkownikJestZalogowany();
 };
 
