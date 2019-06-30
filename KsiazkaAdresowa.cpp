@@ -81,6 +81,16 @@ void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
     adresatMenedzer -> wyszukajAdresatowPoNazwisku();
 }
 
+void KsiazkaAdresowa::usunAdresata()
+{
+    adresatMenedzer -> usunAdresata();
+}
+
+int KsiazkaAdresowa::edytujAdresata()
+{
+    adresatMenedzer -> edytujAdresata();
+}
+
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
 {
     uzytkownikMenedzer.czyUzytkownikJestZalogowany();

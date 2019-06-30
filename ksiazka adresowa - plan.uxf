@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>609</x>
-      <y>119</y>
+      <y>70</y>
       <w>63</w>
       <h>63</h>
     </coordinates>
@@ -20,7 +20,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>609</x>
-      <y>182</y>
+      <y>133</y>
       <w>231</w>
       <h>203</h>
     </coordinates>
@@ -50,15 +50,13 @@
     <id>UMLClass</id>
     <coordinates>
       <x>609</x>
-      <y>385</y>
+      <y>336</y>
       <w>231</w>
-      <h>119</h>
+      <h>98</h>
     </coordinates>
-    <panel_attributes>Plik z uzytkownikami
+    <panel_attributes>Plik z uzytkownikami : public PlikTekstowy
 --
--NAZWA_PLIKU_Z_UZYTKOWNIKAMI:string
 --
--czyPlikJestPusty():bool
 -zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami():string
 -pobierzDaneUzytkownika():Uzytkownik
 +PlikZUzytkownikami()
@@ -72,28 +70,31 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>413</x>
-      <y>308</y>
-      <w>175</w>
-      <h>112</h>
+      <x>385</x>
+      <y>252</y>
+      <w>224</w>
+      <h>119</h>
     </coordinates>
     <panel_attributes>Metody pomocnicze
+--
 --
 +konwersjaIntNaString():static string
 +konwersjaStringNaInt():static int
 +pobierzLiczbe():static string
 +wczytajLinie():static string
 +wczytajZnak():static char
-+zamienPierwszaLitereNaDuzaAPozostaleNaMale():static string </panel_attributes>
++zamienPierwszaLitereNaDuzaAPozostaleNaMale():static string
++podajIdWybranegoAdresata():static int
++wczytajLiczbeCalkowita():static int </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>385</x>
-      <y>63</y>
+      <y>14</y>
       <w>224</w>
-      <h>217</h>
+      <h>238</h>
     </coordinates>
     <panel_attributes>Ksiazka Adresowa
 --
@@ -114,6 +115,8 @@
 +wyswietlWszystkichAdresatow():void
 +wyszukajAdresatowPoImieniu():void
 +wyszukajAdresatowPoNazwisku():void
++usunAdresata():void
++edytujAdresata():int
 +czyUzytkownikJestZalogowany();bool</panel_attributes>
     <additional_attributes/>
   </element>
@@ -121,9 +124,9 @@
     <id>UMLClass</id>
     <coordinates>
       <x>182</x>
-      <y>245</y>
+      <y>196</y>
       <w>203</w>
-      <h>147</h>
+      <h>182</h>
     </coordinates>
     <panel_attributes>AdresatMenedzer
 --
@@ -134,42 +137,49 @@
 -wyswietlDaneAdresata():void
 -podajDaneNowegoAdresata():Adresat
 -wyswietlIloscWyszukanychAdresatow():void
+-wybierzOpcjeZMenuEdycja():char
 +AdresatMenedzer():
 +dodajAdresata():void
 +wyswietlWszystkichAdresatow():void
 +wyszukajAdresatowPoImieniu():void
-+wyszukajAdresatowPoNazwisku():void</panel_attributes>
++wyszukajAdresatowPoNazwisku():void
++usunAdresata():void
++edytujAdresata():int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>182</x>
-      <y>392</y>
+      <y>378</y>
       <w>203</w>
-      <h>154</h>
+      <h>182</h>
     </coordinates>
-    <panel_attributes>PlikZAdresatami
+    <panel_attributes>PlikZAdresatami : public PliktTekstowy
 --
 -idOstatniegoAdresata:int
--NAZWA_PLIKU_Z_ADRESATAMI:string
 --
--czyPlikJestPusty():bool
 -zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami():string
 -pobierzDaneAdresata():Adresat
 -pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami():int
 -pobierzIdAdresataZDanychOddzielonychPionowymiKreskami():int
+-usunPlik():void
+-zmienNazwePliku():void
 +PlikZAdresatami():
 +dopiszAdresataDoPliku():bool
 +wczytajAdresatowZalogowanegoUzytkownikaZPliku():vector &lt;Adresat&gt;
-+pobierzIdOstatniegoAdresata():int</panel_attributes>
++pobierzIdOstatniegoAdresata():int
++pobierzZPlikuIdOstatniegoAdresata():void
++usunWybranaLinieWPliku():void
++edytujDaneAdresataWPliku():void
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>287</x>
-      <y>119</y>
+      <y>70</y>
       <w>98</w>
       <h>126</h>
     </coordinates>
@@ -184,6 +194,22 @@ nazwisko:string
 numerTelefonu:string
 email:string
 adres:string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>385</x>
+      <y>371</y>
+      <w>224</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>PlikTekstowy
+--
++-NAZWA_PLIKU:const string
+--
++-czyPlikJestPusty():bool
++PlikTekstowy():</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
