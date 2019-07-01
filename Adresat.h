@@ -20,7 +20,7 @@ class Adresat
 public:
     Adresat(int id = 0, int idUzytkownika = 0, string imie = "", string nazwisko = "", string numerTelefonu = "", string email = "", string adres = "")
     {
-        this -> id = id; //this to wskaŸnik wskazuj¹cy na sk³adowe danej klasy.
+        this -> id = id;
         this -> idUzytkownika = idUzytkownika;
         this -> imie = imie;
         this -> nazwisko = nazwisko;
