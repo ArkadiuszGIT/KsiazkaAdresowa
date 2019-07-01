@@ -68,36 +68,3 @@ int main()
     }
     return 0;
 }
-
-
-
-
-
-
-
-
-// TESTY AdresatMenedzer
-#include "AdresatMenedzer.h"
-
-int testAM_main()
-{
-    AdresatMenedzer adresatMenedzer("Adresaci.txt", 2);
-    adresatMenedzer.wyswietlWszystkichAdresatow();
-    adresatMenedzer.dodajAdresata();
-    adresatMenedzer.wyswietlWszystkichAdresatow();
-}
-
-
-#include "Adresat.h"
-#include "PlikZAdresatami.h"
-
-int testPlikAdres_main()
-{
-    PlikZAdresatami plikZAdresatami("Adresaci-test.txt");
-    Adresat adresat(1,9,"Janek","Twardowski","999 888 333","janekemail","ul. Jankowa");
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
-
-    cout << plikZAdresatami.pobierzIdOstatniegoAdresata();
-}
-
-

@@ -29,9 +29,9 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
 {
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
-    vector <Uzytkownik>::iterator itrKoniec = --uzytkownicy.end();          //Pre(de)inkrementacja powoduje zmianê wartoœci zmiennej o jeden, ale jej zmiana nastêpuje przed wykorzystaniem zmiennej.
-                                                                            //http://cpp0x.pl/kursy/Kurs-C++/FAQ/Czym-sie-rozni-preinkrementacja-od-postinkrementacji/574
-    plikTekstowy.open(NAZWA_PLIKU.c_str(), ios::out);                        //vector.end wskazuje na element bêd¹cy za ostatnim elementem w wektorze czyli wskazuje na nieistniej¹cy element.
+    vector <Uzytkownik>::iterator itrKoniec = --uzytkownicy.end();
+
+    plikTekstowy.open(NAZWA_PLIKU.c_str(), ios::out);
 
     if (plikTekstowy.good() == true)
     {

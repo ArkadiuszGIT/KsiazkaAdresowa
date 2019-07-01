@@ -4,12 +4,12 @@ using namespace std;
 
 void Adresat::ustawId(int noweId)
 {
-    if (noweId >= 0) // zabezpieczenie/walidacja
+    if (noweId >= 0)
         id = noweId;
 }
 void Adresat::ustawIdUzytkownika(int noweId)
 {
-    if (noweId >= 0) // zabezpieczenie/walidacja
+    if (noweId >= 0)
         idUzytkownika = noweId;
 }
 
