@@ -5,45 +5,45 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1036</x>
-      <y>357</y>
-      <w>63</w>
+      <y>308</y>
+      <w>84</w>
       <h>91</h>
     </coordinates>
-    <panel_attributes>Uzytkownik
+    <panel_attributes>User
 --
 -id:Integer
 -login:String
--haslo:String</panel_attributes>
+-password:String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>721</x>
-      <y>175</y>
+      <y>126</y>
       <w>231</w>
       <h>217</h>
     </coordinates>
-    <panel_attributes>UzytkownikMenedzer
+    <panel_attributes>UserManager
 --
--idZalogowanegoUzytkownika:Integer
--uzytkownicy: vector &lt;Uzytkownik&gt;
--plikZUzytkownikami:PlikZUzytkownikami
+-idOfLogedUser:Integer
+-users: vector &lt;user&gt;
+-fileWithUsers:FileWithUsers
 --
-+UzytkownikMenedzer():
-+rejestracjaUzytkownika():void
-+logowanieUzytkownika():int
-+czyUzytkownikJestZalogowany():bool
-+wylogowanieUzytkownika():int 
-+zmianaHaslaZalogowanegoUzytkownika():void
-+wypiszWszystkichUzytkownikow():void
-+wczytajUzytkownikowZPliku():void
-+pobierzIdZalogowanegoUzytkownika():int
-+wybierzOpcjeZMenuUzytkownika():char
++UserManager():
++userRegistration():void
++userLoggingIn():int
++checkIfUserIsLoged():bool
++userLoggingOut():int 
++changePasswordOfLoggedUser():void
++showAllUsers():void
++loadUsersFromFile():void
++getIdOfLoggedUser():int
++chooseOptionFromUserMenu():char
 
--podajDaneNowegoUzytkownika():Uzytkownik
--pobierzIdNowegoUzytkownika():int
--czyIstniejeLogin():bool
+-inputDataOfNewUser():User
+-getIdOfNewUser():int
+-checkIfLoginExist():bool
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -51,41 +51,41 @@
     <id>UMLClass</id>
     <coordinates>
       <x>721</x>
-      <y>427</y>
+      <y>378</y>
       <w>231</w>
       <h>105</h>
     </coordinates>
-    <panel_attributes>PlikZUzytkownikami : public PlikTekstowy
+    <panel_attributes>FileWithUsers : TextFile
 --
 --
-+PlikZUzytkownikami()
-+dopiszUzytkownikaDoPliku():void
-+zapiszWszystkichUzytkownikowDoPliku():void
-+wczytajUzytkownikowZPliku():vector &lt;Uzytkownik&gt;
++FileWithUsers()
++addUserToFile():void
++addAllUsersToFile():void
++loadUsersFromFile():vector &lt;User&gt;
 
--zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami():string
--pobierzDaneUzytkownika():Uzytkownik</panel_attributes>
+-changeDataOfUserToLineWithDataDividedByVerticalLines():string
+-getDataOfUser():Uzytkownik</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>441</x>
-      <y>322</y>
+      <y>273</y>
       <w>224</w>
       <h>126</h>
     </coordinates>
-    <panel_attributes>MetodyPomocnicze
+    <panel_attributes>SupportMethods
 --
 --
-_+konwersjaIntNaString():static string_
-_+konwersjaStringNaInt():static int_
-_+pobierzLiczbe():static string_
-_+wczytajLinie():static string_
-_+wczytajZnak():static char_
-_+zamienPierwszaLitereNaDuzaAPozostaleNaMale():static string_
-_+podajIdWybranegoAdresata():static int_
-_+wczytajLiczbeCalkowita():static int_
+_+conversionFromIntToString():static string_
+_+coversionFromStringToInt():static int_
+_+getNumber():static string_
+_+loadLine():static string_
+_+loadChar():static char_
+_+changeFirstLetterToUpperAndNextLettersToLower():static string_
+_+InputIdOfChosenAddressee():static int_
+_+loadInteger():static int_
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -93,88 +93,88 @@ _+wczytajLiczbeCalkowita():static int_
     <id>UMLClass</id>
     <coordinates>
       <x>441</x>
-      <y>56</y>
+      <y>7</y>
       <w>224</w>
       <h>238</h>
     </coordinates>
-    <panel_attributes>KsiazkaAdresowa
+    <panel_attributes>AddressBook
 --
--uzytkownikMenedzer:UzytkownikMenedzer
--*adresatMenedzer:AdresatMenedzer
--NAZWA_PLIKU_Z_ADRESATAMI:string
+-userManager:UserManager
+-*addresseeManager:AddresseeManager
+-NAME_OF_FILE_WITH_ADDRESSEES:string
 --
-+KsiazkaAdresowa()
-+~KsiazkaAdresowa()
-+rejestracjaUzytkownika():void
-+logowanieUzytkownika():int 
-+wylogowanieUzytkownika():int
-+zmianaHaslaZalogowanegoUzytkownika():void
-+wypiszWszystkichUzytkownikow():void
-+wybierzOpcjeZMenuGlownego():char 
-+wybierzOpcjeZMenuUzytkownika():char 
-+dodajAdresata():void
-+wyswietlWszystkichAdresatow():void
-+wyszukajAdresatowPoImieniu():void
-+wyszukajAdresatowPoNazwisku():void
-+usunAdresata():void
-+edytujAdresata():int
-+czyUzytkownikJestZalogowany();bool</panel_attributes>
++AddressBook()
++~AddressBook()
++userRegistration():void
++userLoggingIn():int 
++userLoggingOut():int
++changePasswordOfLoggedUser():void
++showAllUsers():void
++chooseOptionFromMainMenu():char 
++chooseOptionFromUserMenu():char 
++addAddressee():void
++showAllAddressees():void
++searchAddresseeByName():void
++searchAddresseeBySurname():void
++deleteAddressee():void
++editAddressee():int
++checkIfUserIsLoged();bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>168</x>
-      <y>182</y>
+      <y>133</y>
       <w>203</w>
       <h>196</h>
     </coordinates>
-    <panel_attributes>AdresatMenedzer
+    <panel_attributes>AddresseeManager
 --
--ID_ZALOGOWANEGO_UZYTKOWNIKA:int
--adresaci:vector &lt;Adresat&gt;
--plikZAdresatami:PlikZAdresatami
+-ID_OF_LOGED_USER:int
+-addressees:vector &lt;Addressee&gt;
+-fileWithAddressees:FileWithAddressees
 --
-+AdresatMenedzer():
-+dodajAdresata():void
-+wyswietlWszystkichAdresatow():void
-+wyszukajAdresatowPoImieniu():void
-+wyszukajAdresatowPoNazwisku():void
-+usunAdresata():void
-+edytujAdresata():int
++AddresseeManager():
++addAddressee():void
++showAllAddressees():void
++searchAddresseeByName():void
++searchAddresseeBySurname():void
++deleteAddressee():void
++editAddressee():int
 
--wyswietlDaneAdresata():void
--podajDaneNowegoAdresata():Adresat
--wyswietlIloscWyszukanychAdresatow():void
--wybierzOpcjeZMenuEdycja():char</panel_attributes>
+-showDataOfAddressee():void
+-inputDataOfNewAddressee():Adresat
+-showNumberOfFoundedAddressees():void
+-chooseOptionFromEditionMenu():char</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>168</x>
-      <y>427</y>
+      <y>378</y>
       <w>203</w>
       <h>196</h>
     </coordinates>
-    <panel_attributes>PlikZAdresatami : public PliktTekstowy
+    <panel_attributes>FileWithAddressees : public TextFile
 --
--idOstatniegoAdresata:int
+-idOfLastAddressee:int
 --
-+PlikZAdresatami():
-+dopiszAdresataDoPliku():bool
-+wczytajAdresatowZalogowanegoUzytkownikaZPliku():vector &lt;Adresat&gt;
-+pobierzIdOstatniegoAdresata():int
-+pobierzZPlikuIdOstatniegoAdresata():void
-+usunWybranaLinieWPliku():void
-+edytujDaneAdresataWPliku():void
++FileWithAddressees():
++addAddresseeToFile():bool
++loadAddresseesOfLogedUserFromFile():vector &lt;Addressee&gt;
++getIdOfLastAddressee():int
++getFromFileIdOfLastAddressee():void
++deleteChosenLineInFile():void
++editDataOfAddresseeInFile():void
 
--zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami():string
--pobierzDaneAdresata():Adresat
--pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami():int
--pobierzIdAdresataZDanychOddzielonychPionowymiKreskami():int
--usunPlik():void
--zmienNazwePliku():void
+-changeDataOfAddresseeToLineWithDataDividedByVerticalLines():string
+-getDataOfAddressee():Adresat
+-getIdOfUserFromDividedLineOfData():int
+-getIdOfAddresseeFromDividedLineOfData():int
+-deleteFile():void
+-changeFileName():void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -182,39 +182,38 @@ _+wczytajLiczbeCalkowita():static int_
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>336</y>
+      <y>287</y>
       <w>98</w>
       <h>126</h>
     </coordinates>
-    <panel_attributes>Adresat
+    <panel_attributes>Addressee
 --
 id:int 
-idUzytkownika:int 
+userId:int 
 login:string
-haslo:string
-imie:string
-nazwisko:string
-numerTelefonu:string
+password:string
+name:string
+surname:string
+phoneNumber:string
 email:string
-adres:string</panel_attributes>
+address:string</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>441</x>
-      <y>469</y>
+      <y>420</y>
       <w>224</w>
       <h>70</h>
     </coordinates>
-    <panel_attributes>PlikTekstowy
+    <panel_attributes>TextFile
 --
-#NAZWA_PLIKU:const string
+#FILE_NAME:const string
 --
-+PlikTekstowy():
++TextFile():
 
-#czyPlikJestPusty():bool
-
+#checkIfFileIsEmpty():bool
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -222,7 +221,7 @@ adres:string</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>658</x>
-      <y>476</y>
+      <y>427</y>
       <w>77</w>
       <h>21</h>
     </coordinates>
@@ -233,7 +232,7 @@ adres:string</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>364</x>
-      <y>476</y>
+      <y>427</y>
       <w>91</w>
       <h>21</h>
     </coordinates>
@@ -244,7 +243,7 @@ adres:string</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>658</x>
-      <y>231</y>
+      <y>182</y>
       <w>77</w>
       <h>28</h>
     </coordinates>
@@ -256,7 +255,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>364</x>
-      <y>231</y>
+      <y>182</y>
       <w>91</w>
       <h>28</h>
     </coordinates>
@@ -268,7 +267,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>658</x>
-      <y>336</y>
+      <y>287</y>
       <w>77</w>
       <h>28</h>
     </coordinates>
@@ -280,7 +279,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>364</x>
-      <y>336</y>
+      <y>287</y>
       <w>91</w>
       <h>28</h>
     </coordinates>
@@ -292,7 +291,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>546</x>
-      <y>287</y>
+      <y>238</y>
       <w>21</w>
       <h>49</h>
     </coordinates>
@@ -304,7 +303,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>364</x>
-      <y>420</y>
+      <y>371</y>
       <w>91</w>
       <h>28</h>
     </coordinates>
@@ -316,7 +315,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>658</x>
-      <y>420</y>
+      <y>371</y>
       <w>77</w>
       <h>28</h>
     </coordinates>
@@ -328,7 +327,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>840</x>
-      <y>385</y>
+      <y>336</y>
       <w>28</w>
       <h>56</h>
     </coordinates>
@@ -340,7 +339,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>273</x>
-      <y>371</y>
+      <y>322</y>
       <w>28</w>
       <h>70</h>
     </coordinates>
@@ -352,7 +351,7 @@ m2=1</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>91</x>
-      <y>343</y>
+      <y>294</y>
       <w>91</w>
       <h>28</h>
     </coordinates>
@@ -364,7 +363,7 @@ m1=0...n</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>945</x>
-      <y>357</y>
+      <y>308</y>
       <w>105</w>
       <h>28</h>
     </coordinates>
@@ -376,7 +375,7 @@ m2=0...n</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>91</x>
-      <y>434</y>
+      <y>385</y>
       <w>91</w>
       <h>21</h>
     </coordinates>
@@ -387,7 +386,7 @@ m2=0...n</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>945</x>
-      <y>427</y>
+      <y>378</y>
       <w>105</w>
       <h>21</h>
     </coordinates>
