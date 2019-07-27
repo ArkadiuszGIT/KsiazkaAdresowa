@@ -9,8 +9,6 @@ class Adresat
 {
     int id;
     int idUzytkownika;
-    string login;
-    string haslo;
     string imie;
     string nazwisko;
     string numerTelefonu;
@@ -30,8 +28,6 @@ public:
     }
     void ustawId(int noweId);
     void ustawIdUzytkownika(int noweId);
-    void ustawLogin(string nowyLogin);
-    void ustawHaslo(string noweHaslo);
     void ustawImie(string noweImie);
     void ustawNazwisko(string noweNazwisko);
     void ustawNumerTelefonu(string nowyNumerTelefonu);
@@ -40,8 +36,6 @@ public:
 
     int pobierzId();
     int pobierzIdUzytkownika();
-    string pobierzLogin();
-    string pobierzHaslo();
     string pobierzImie();
     string pobierzNazwisko();
     string pobierzNumerTelefonu();

@@ -13,14 +13,6 @@ void Adresat::ustawIdUzytkownika(int noweId)
         idUzytkownika = noweId;
 }
 
-void Adresat::ustawLogin(string nowyLogin)
-{
-    login = nowyLogin;
-}
-void Adresat::ustawHaslo(string noweHaslo)
-{
-    haslo = noweHaslo;
-}
 void Adresat::ustawImie(string noweImie)
 {
     imie = noweImie;
@@ -49,14 +41,6 @@ int Adresat::pobierzId()
 int Adresat::pobierzIdUzytkownika()
 {
     return idUzytkownika;
-}
-string Adresat::pobierzLogin()
-{
-    return login;
-}
-string Adresat::pobierzHaslo()
-{
-    return haslo;
 }
 string Adresat::pobierzImie()
 {
